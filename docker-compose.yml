@@ -1,0 +1,11 @@
+services:
+  backend:
+    image: backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+    container_name: party_watcher_backend
+    volumes:
+      - ./:/usr/src/app
