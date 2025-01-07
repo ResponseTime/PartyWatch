@@ -88,7 +88,9 @@ app.post("/joinRoom", (req, res) => {
     user_socket.join(room.room_name);
     console.log(user_socket.rooms)
     res.json({ room });
-    syncTime(room)
+    // setTimeout(() => {
+    //   syncTime(room)
+    // }, 3000);
   } catch (e) {
     res.status(500).json({ Error: "Internal Server Error" })
   }
