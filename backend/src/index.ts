@@ -34,6 +34,12 @@ const room_map: Map<string, room_info> = new Map()
 
 io.on("connection", (socket) => {
   socket_map.set(socket.id, socket)
+  socket.on("pause", (roomName, duration) => {
+    socket.to(roomName).emit("pause", duration)
+  })
+  socket.on("play", (roomName) => {
+    socket.to(roomName).emit("play")
+  })
   socket.on("syncTimeServer", (roomId, currentTime) => {
     const current = room_map.get(roomId);
     if (!current) {

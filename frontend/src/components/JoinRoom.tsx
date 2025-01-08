@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom'
 export default function JoinRoom() {
   const navigate = useNavigate()
   const [roomId, setRoomId] = useState<string>()
-  const socketId = useSelector((state: RootState) => state.socketIdReducer.socketId)
+  const socket = useSelector((state: RootState) => state.socketIdReducer.socket)
   const handleJoin = async () => {
     const res = await fetch("http://localhost:3000/joinRoom", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ room_id: roomId, socket_id: socketId })
+      body: JSON.stringify({ room_id: roomId, socket_id: socket.id })
     })
     const response = await res.json()
     console.log(response)

@@ -4,7 +4,7 @@ import Home from './components/Home'
 import { useEffect } from 'react'
 import { io } from 'socket.io-client'
 import { useDispatch } from 'react-redux'
-import { setSocketId } from './features/socketId/socketIdSlice'
+import { setSocket } from './features/socketId/socketIdSlice'
 import CreateRoom from './components/CreateRoom'
 import JoinRoom from './components/JoinRoom'
 import Room from './components/Room'
@@ -14,7 +14,7 @@ function App() {
     const socket = io("http://localhost:3000")
     socket.on("connect", () => {
       if (socket.id) {
-        dispatch(setSocketId(socket.id))
+        dispatch(setSocket(socket))
       }
     })
     socket.on("synctimeClient", (currentTime: number) => {

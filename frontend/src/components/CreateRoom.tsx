@@ -9,7 +9,7 @@ export default function CreateRoom() {
     "room_name": "",
     "videoURL": ""
   })
-  const socketId = useSelector((state: RootState) => state.socketIdReducer.socketId)
+  const socket = useSelector((state: RootState) => state.socketIdReducer.socket)
   const handleInputs = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRoom((prevroom) => ({
       ...prevroom,
@@ -23,7 +23,7 @@ export default function CreateRoom() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ ...room, socket_id: socketId })
+      body: JSON.stringify({ ...room, socket_id: socket.id })
     })
     const response = await res.json()
     navigate("/room", { state: { 'admin': true, room: response.generated_room } })
