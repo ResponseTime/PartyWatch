@@ -15,10 +15,10 @@ export default function Room() {
       setPlay(true)
     })
     socket?.on("pause", (duration: number) => {
+      setPlay(false)
       if (playerRef) {
         playerRef.current?.seekTo(duration, "seconds")
       }
-      setPlay(false)
     })
   }, [])
   const playerRef = useRef<ReactPlayer | null>(null)
