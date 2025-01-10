@@ -14,6 +14,10 @@ PartyWatch is a collaborative video-watching platform that allows users to creat
 - **Frontend**: React, Redux-toolkit, TypeScript
 - **Backend**: Node.js, Express, TypeScript, Socket.IO
 
+### Video Demo
+
+https://github.com/user-attachments/assets/fb69714d-4ef1-45e4-8500-4a4434517608
+
 ## Getting Started
 
 To run PartyWatch locally, follow these steps:
@@ -80,9 +84,6 @@ To run PartyWatch locally, follow these steps:
 2. Share the room ID with friends to invite them to join.
 3. Enjoy synchronized video playback together!
 
-### Video Demo
-
-[Insert video demo link here]
 
 ## Contributing
 
