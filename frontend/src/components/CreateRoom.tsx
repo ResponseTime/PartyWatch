@@ -39,7 +39,7 @@ export default function CreateRoom() {
       }, 5000);
       return;
     }
-    const res = await fetch('https://party-watch-giiq.vercel.app/createRoom', {
+    const res = await fetch('http://localhost:3000/createRoom', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
