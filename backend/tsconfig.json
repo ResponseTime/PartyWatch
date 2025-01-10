@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "outDir": "./public",
     "lib": ["es6"],
     "allowJs": true,
-    "outDir": "build",
-    "rootDir": "src",
+    "rootDir": "./src",
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
