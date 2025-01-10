@@ -4,15 +4,15 @@ services:
       context: ./backend
       dockerfile: ./Dockerfile
     ports:
-      - 3000:3000
+      - "3000:3000"
     container_name: party_watcher_backend
     volumes:
       - ./backend:/usr/src/app
 
-    frontend:
-        build:
-          context: ./frontend
-          dockerfile: ./Dockerfile
-        ports:
-          - 5173:5173
-        container_name: party_watcher_frontend
+  frontend:
+      build:
+        context: ./frontend
+        dockerfile: ./Dockerfile
+      ports:
+        - "5173:5173"
+      container_name: party_watcher_frontend
