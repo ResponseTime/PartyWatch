@@ -1,8 +1,8 @@
 FROM node:18
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 5173
 
 COPY package.json package-lock.json ./
 
