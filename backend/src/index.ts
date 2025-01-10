@@ -9,7 +9,7 @@ app.use(express.urlencoded({
   extended: true
 }))
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://party-watch.vercel.app",
   methods: ["GET", "POST"],
   credentials: true
 }))
@@ -24,7 +24,7 @@ type room_info = {
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173"
+    origin: "https://party-watch.vercel.app"
   }
 });
 const socket_map: Map<string, Socket> = new Map()

@@ -11,7 +11,7 @@ import Room from './components/Room'
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
-    const socket = io("http://localhost:3000")
+    const socket = io("https://party-watch-giiq.vercel.app")
     socket.on("connect", () => {
       if (socket.id) {
         dispatch(setSocket(socket))

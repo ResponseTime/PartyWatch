@@ -17,7 +17,7 @@ export default function JoinRoom() {
       }, 5000);
       return;
     }
-    const res = await fetch('http://localhost:3000/joinRoom', {
+    const res = await fetch('https://party-watch-giiq.vercel.app/joinRoom', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
